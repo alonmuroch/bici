@@ -1,10 +1,13 @@
 PODS:
+  - ECSlidingViewController (2.0.3)
   - GoogleMaps (1.11.1)
 
 DEPENDENCIES:
+  - ECSlidingViewController (~> 2.0.3)
   - GoogleMaps
 
 SPEC CHECKSUMS:
+  ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
   GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
 
 COCOAPODS: 0.39.0

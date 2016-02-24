@@ -12,4 +12,6 @@
 
 + (BCBottomBar*)fromXib;
 
+@property (nonatomic, copy) dispatch_block_t leftBtnPressed;
+
 @end

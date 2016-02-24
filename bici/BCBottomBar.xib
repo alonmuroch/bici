@@ -23,6 +23,9 @@
                                 <constraint firstAttribute="width" secondItem="lBu-Zq-0fF" secondAttribute="height" multiplier="1:1" id="hbB-uK-5fe"/>
                             </constraints>
                             <state key="normal" image="bottombar_bici_button"/>
+                            <connections>
+                                <action selector="btnLeftPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="35w-1g-nSr"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi8-OK-7ck" userLabel="divider 1">
                             <rect key="frame" x="90" y="0.0" width="1" height="90"/>
@@ -37,6 +40,9 @@
                                 <constraint firstAttribute="width" secondItem="3Ji-uo-rsX" secondAttribute="height" multiplier="1:1" id="xat-O5-3is"/>
                             </constraints>
                             <state key="normal" image="bottombar_avatar_button"/>
+                            <connections>
+                                <action selector="btnRightPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="G9s-gl-p2n"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Cp-J5-rLC" userLabel="divider 2">
                             <rect key="frame" x="284" y="0.0" width="1" height="90"/>
@@ -45,16 +51,16 @@
                                 <constraint firstAttribute="width" constant="1" id="nRo-74-pfw"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="40 friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAQ-uB-YtQ">
-                            <rect key="frame" x="0.0" y="41" width="375" height="16"/>
-                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
-                            <color key="textColor" red="0.50588235294117645" green="0.67843137254901964" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="around you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpP-uq-Lal">
                             <rect key="frame" x="0.0" y="58.5" width="375" height="19"/>
                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
                             <color key="textColor" red="0.086274509803921567" green="0.22352941176470587" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="40 friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAQ-uB-YtQ">
+                            <rect key="frame" x="0.0" y="37" width="375" height="16"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                            <color key="textColor" red="0.50588235294117645" green="0.67843137254901964" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -102,7 +108,11 @@
                 <constraint firstItem="sQF-vd-7Bi" firstAttribute="height" secondItem="Aty-6x-7eT" secondAttribute="height" multiplier="0.8" id="xEx-wR-UWy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="226.5" y="201"/>
+            <connections>
+                <outlet property="btnLeft" destination="lBu-Zq-0fF" id="FcN-VQ-H5J"/>
+                <outlet property="btnRight" destination="3Ji-uo-rsX" id="iuY-pj-ym4"/>
+            </connections>
+            <point key="canvasLocation" x="277.5" y="214"/>
         </view>
     </objects>
     <resources>

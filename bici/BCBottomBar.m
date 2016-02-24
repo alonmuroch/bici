@@ -8,6 +8,13 @@
 
 #import "BCBottomBar.h"
 
+@interface BCBottomBar()
+
+@property (weak, nonatomic) IBOutlet UIButton *btnLeft;
+@property (weak, nonatomic) IBOutlet UIButton *btnRight;
+
+@end
+
 @implementation BCBottomBar
 
 + (BCBottomBar*)fromXib {
@@ -16,12 +23,19 @@
     return (BCBottomBar*)nibView;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    
 }
-*/
+
+- (IBAction)btnLeftPressed:(id)sender {
+    if(_leftBtnPressed)
+        _leftBtnPressed();
+}
+
+- (IBAction)btnRightPressed:(id)sender {
+}
+
 
 @end

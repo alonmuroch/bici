@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="11W-Bc-jHB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Sliding View Controller-->
+        <scene sceneID="GMn-yx-N5a">
+            <objects>
+                <viewController id="11W-Bc-jHB" customClass="ECSlidingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hIK-6d-8tm"/>
+                        <viewControllerLayoutGuide type="bottom" id="dwC-FJ-ndX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XI8-sR-MkV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="topViewControllerStoryboardId" value="navController"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="underLeftViewControllerStoryboardId" value="searchController"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RV6-q1-pPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="353" y="-1081"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="navController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +48,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330.5" y="305.5"/>
+            <point key="canvasLocation" x="352.5" y="-268.5"/>
+        </scene>
+        <!--Search Controller-->
+        <scene sceneID="fU7-6g-RrM">
+            <objects>
+                <viewController storyboardIdentifier="searchController" id="6K0-il-eiS" customClass="SearchController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IQI-x5-7IJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EvD-6e-xkF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1de-9l-Lu4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nW0-LC-oTM">
+                                <rect key="frame" x="-10" y="0.0" width="395" height="167"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA7-PC-jhv">
+                                        <rect key="frame" x="305.5" y="15" width="49.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cA7-PC-jhv" secondAttribute="height" multiplier="1:1" id="PH9-E9-UIF"/>
+                                        </constraints>
+                                        <state key="normal" image="search_right_arrow_icon"/>
+                                        <connections>
+                                            <action selector="btnRightPressed:" destination="6K0-il-eiS" eventType="touchUpInside" id="ZpH-dF-3N3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.59215686274509804" green="0.7803921568627451" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cA7-PC-jhv" secondAttribute="trailing" constant="40" id="Vjo-FB-wxD"/>
+                                    <constraint firstItem="cA7-PC-jhv" firstAttribute="height" secondItem="nW0-LC-oTM" secondAttribute="height" multiplier="0.3" id="XEE-9y-QMu"/>
+                                    <constraint firstItem="cA7-PC-jhv" firstAttribute="top" secondItem="nW0-LC-oTM" secondAttribute="top" constant="15" id="wlo-4b-RBX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nW0-LC-oTM" firstAttribute="height" secondItem="1de-9l-Lu4" secondAttribute="height" multiplier="0.25" id="YVA-3f-LSy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nW0-LC-oTM" secondAttribute="trailing" constant="-26" id="idK-Gh-QfU"/>
+                            <constraint firstItem="nW0-LC-oTM" firstAttribute="leading" secondItem="1de-9l-Lu4" secondAttribute="leadingMargin" constant="-26" id="s9y-9s-cYZ"/>
+                            <constraint firstItem="nW0-LC-oTM" firstAttribute="top" secondItem="1de-9l-Lu4" secondAttribute="topMargin" id="sFN-6F-FEV"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zuc-4D-SqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818.5" y="-268.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search_right_arrow_icon" width="50" height="50"/>
+    </resources>
 </document>

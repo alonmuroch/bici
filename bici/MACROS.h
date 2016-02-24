@@ -10,7 +10,7 @@
 #define MACROS_h
 
 
-void delay(CGFloat delay, dispatch_block_t block) {
+static void delay(CGFloat delay, dispatch_block_t block) {
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), block);
 }

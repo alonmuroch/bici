@@ -5,5 +5,6 @@
 
 target 'bici' do
 	pod 'GoogleMaps'
+	pod 'ECSlidingViewController', '~> 2.0.3'
 end
 
